@@ -1,0 +1,29 @@
+﻿@model ICollection<sunriseTEST.Storage.Entity.Student>
+
+<ul>
+    <li>
+        <a href="#">ABOBA</a>
+    </li>
+    <li>
+        <a href="#">ABOBA</a>
+    </li>
+    <li>
+        <a href="#">ABOBA</a>
+    </li>
+    @foreach (var student in Model)
+    {
+        <div>@student.Id</div>
+        <div>@student.LastName</div>
+        <div>@student.Name</div>
+        <div>@student.Group.Name</div>
+        <div>@student.Group.Description</div>
+    }
+</ul>
+
+<div>
+    @using (Html.BeginForm("DeleteStudent", "Student", FormMethod.Post))
+            {
+                <textarea name="studentId" id="studentId"></textarea>
+                <button>delete</button>
+            }
+</div>
